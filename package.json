@@ -1,0 +1,24 @@
+{
+  "name": "forenxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/standardforever/forenxy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/standardforever/forenxy/issues"
+  },
+  "homepage": "https://github.com/standardforever/forenxy#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
