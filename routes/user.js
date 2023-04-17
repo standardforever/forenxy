@@ -3,6 +3,7 @@ const { email } = require('../controllers/user');
 
 const router = express.Router();
 
-// router.get('/email-sender', email);
 
-module.export = router
+router.get('/email-sender', email);
+
+module.exports = router
