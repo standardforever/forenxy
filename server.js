@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const user = require('./routes/user')
+const user = require('./routes/user');
+const mySqlClient = require('./models/user');
 
 require("dotenv").config();
 
@@ -44,5 +45,5 @@ app.get('/auth/google/callback', async (req, res) => {
 });
 
 
-
+mySqlClient;
 app.listen(5000, () => console.log('Forenxy API is listening on PORT 5000'));
