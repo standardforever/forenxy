@@ -45,5 +45,4 @@ app.get('/auth/google/callback', async (req, res) => {
 });
 
 
-mySqlClient;
 app.listen(5000, () => console.log('Forenxy API is listening on PORT 5000'));

@@ -28,6 +28,7 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.2.3",
     "nodemailer": "^6.9.1",
-    "sequelize": "^6.31.0"
+    "sequelize": "^6.31.0",
+    "twilio": "^4.10.0"
   }
 }
