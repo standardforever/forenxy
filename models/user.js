@@ -1,10 +1,4 @@
-const mysql = require('mysql2/promise');
-const connection = async () => ( await mysql.createConnection({
-    host: 'localhost',
-    user: 'forenxy_user',
-    password: 'forenxy_pwd',
-    database: 'forenxy'
-}))
+const { mySqlClient } = require('../utils/database')
 
 
 /**
@@ -37,13 +31,7 @@ const User = `
     )
 `;
 
-try {
-    const [rows, fields] = async () => (await connection.execute(User));
-    console.log('Users table created');
-} catch (err) {
-    console.error(err);
-}
 
-module.exports = {
-    User
-}
+
+
+// async () => (await mySqlClient('localhost', 'forenxy_user', 'forenxy_pwd', 'forenxy').create_table(User))
