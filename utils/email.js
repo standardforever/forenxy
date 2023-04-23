@@ -16,13 +16,19 @@ const oAuth2Client = new google.auth.OAuth2(
 	REDIRECT_URI
   );
 
+// it helps to refresh the token 
 oAuth2Client.setCredentials({
     refresh_token: REFRESH_TOKEN
   });
 
 
-
-
+  /**
+   * sendGmaiil - it a functionality that send gmail to user
+   * @to : the person to send the email to 
+   * @subject : the Subject of the email
+   * @html : The message to send(in form of html)
+   * 
+   */
 const sendGmail = async (to, subject, html) => {
     const accessToken = await oAuth2Client.getAccessToken();
     try {
@@ -49,9 +55,9 @@ const sendGmail = async (to, subject, html) => {
             if (err) {
                 console.log(err);
             }
-            else {
-                console.log(info);
-            }
+            // else {
+            //     console.log(info);
+            // }
         });
     } catch (error) {
         console.log(error);

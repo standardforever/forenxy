@@ -1,14 +1,14 @@
 require("dotenv").config();
 const accountSid = process.env.TWILIO_SID;
 const authToken = process.env.TWILIO_TOKEN;
-const PHONE_NUMBER = process.env.PHONE_NUMBER
+// const PHONE_NUMBER = process.env.PHONE_NUMBER
 const VERIFICATION_SID = process.env.VERIFICATION_SID
 const client = require('twilio')(accountSid, authToken);
 
 
 /**
  * sendVrifcation - it send verification code to user
- * @to_number: phonNumber to send the message to
+ * @to_number : phonNumber to send the message to
  */
 
  const sendVerification = async (to_number) => {
@@ -41,4 +41,9 @@ const createService = async () => {
                 .create({friendlyName: 'My First Verify Service'})
                 .then(service => console.log(service.sid));
  };
+
+
 //  createService()
+
+
+module.exports = { confirmVerification, sendVerification}

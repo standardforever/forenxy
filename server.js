@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const user = require('./routes/user');
-const mySqlClient = require('./models/user');
-
+const { user_schema } = require('./models/user');
+const { db } = require('./utils/database')
 require("dotenv").config();
 
 
@@ -45,4 +45,27 @@ app.get('/auth/google/callback', async (req, res) => {
 });
 
 
-app.listen(5000, () => console.log('Forenxy API is listening on PORT 5000'));
+// Create all tables
+db.createTable(user_schema);
+
+// (async () => {
+// 	const hash = await hashPassword('1')
+// 	// $2b$10$5ysgXZUJi7MkJWhEhFcZTObGe18G1G.0rnXkewEtXq6ebVx1qpjYW
+  
+// 	// TODO: store hash in a database
+// 	console.log(hash)
+//   })()
+
+// (async () => {
+// 	// Hash fetched from DB
+// 	const hash = `$2b$10$r4eTplJzMheUvntQDFj18OCjyYx6wpiW.B5TlhytYcFlFaDq/oLZ.`
+  
+// 	// Check if the password is correct
+// 	const isValidPass = await comparePassword('1', hash)
+  
+// 	// Print validation status
+// 	console.log(`Password is ${!isValidPass ? 'not' : ''} valid!`)
+// 	// => Password is valid!
+//   })()
+
+app.listen(5001, () => console.log('Forenxy API is listening on PORT 5000'));
